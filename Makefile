@@ -34,7 +34,7 @@ pyflakes:
 
 pycodestyle:
         # search the current directory tree for .py files, skipping _build and var directories, feeding them to pycodestyle
-	find . \( -name _build -o -name var -o -name .env \) -type d -prune -o -name '*.py' -print0 | $(XARGS) -n 1 pycodestyle --repeat --exclude=docs/*,.vscode/* --ignore=E731,E402,W504,W503
+	find . \( -name _build -o -name var -o -name .env \) -type d -prune -o -name '*.py' -print0 | $(XARGS) -n 1 pycodestyle --repeat --exclude=docs/*,.vscode/* --ignore=E501,E731,E402,W504,W503
 
 test: clean
 	pytest --random-order
